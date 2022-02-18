@@ -1,0 +1,29 @@
+{
+    "name": "luan-tavares/simple-deploy",
+    "license": "MIT",
+    "description": "Simple Deploy with tag",
+    "keywords": ["api","integration"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Luan Tavares Lourenço",
+            "email": "luan.tavares.lourenco@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LTL\\Deploy\\": ["src/"]
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "larapack/dd": "1.*",
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+       
+    }
+}
