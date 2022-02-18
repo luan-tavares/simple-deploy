@@ -24,6 +24,11 @@
         "phpunit/phpunit": "^9.5"
     },
     "scripts": {
+        "post-install-cmd": "LTL\\Deploy\\A::a",
+        "deploy-tag": "LTL\\Deploy\\DeployTag::execute"
+    },
+    "config": {
+      
        
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace LTL\Hubspot\Deploy;
+namespace LTL\Deploy;
 
 use Composer\Script\Event;
 

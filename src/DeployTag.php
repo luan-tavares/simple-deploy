@@ -1,6 +1,6 @@
 <?php
 
-namespace LTL\Hubspot\Deploy;
+namespace LTL\Deploy;
 
 use Composer\Script\Event;
 use DirectoryIterator;
@@ -92,7 +92,7 @@ class DeployTag
 
     private static function getLastTag(string $filter)
     {
-        $folder = new DirectoryIterator(__DIR__ .'/../../.git/refs/tags');
+        $folder = new DirectoryIterator(__DIR__ .'/../.git/refs/tags');
         $list = new SplMaxHeap;
         $list->insert($filter);
         foreach ($folder as $file) {
