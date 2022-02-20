@@ -8,8 +8,18 @@ use SplMaxHeap;
 
 class DeployTag
 {
+    private static string $projectPath;
+    
     public static function execute(Event $event)
     {
+        $splitPath = explode('/vendor/luan-tavares', __DIR__);
+
+        self::$projectPath = $splitPath[0];
+
+        if (count($splitPath) !== 2) {
+            self::$projectPath = __DIR__ .'/..';
+        }
+
         $arguments = self::resolveArguments($event->getArguments());
 
         $baseTag = 'v';
@@ -92,7 +102,7 @@ class DeployTag
 
     private static function getLastTag(string $filter)
     {
-        $folder = new DirectoryIterator(__DIR__ .'/../.git/refs/tags');
+        $folder = new DirectoryIterator(self::$projectPath .'/.git/refs/tags');
         $list = new SplMaxHeap;
         $list->insert($filter);
         foreach ($folder as $file) {
