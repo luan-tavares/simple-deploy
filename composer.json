@@ -2,7 +2,10 @@
     "name": "luan-tavares/simple-deploy",
     "license": "MIT",
     "description": "Simple Deploy with tag",
-    "keywords": ["api","integration"],
+    "keywords": [
+        "api",
+        "integration"
+    ],
     "type": "library",
     "authors": [
         {
@@ -13,11 +16,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "LTL\\Deploy\\": ["src/"]
+            "LTL\\Deploy\\": [
+                "src/"
+            ]
         }
     },
     "require": {
-        "php": "^8.0"
+        "php": "^7.4|^8.0"
     },
     "require-dev": {
         "larapack/dd": "1.*",
@@ -27,8 +32,5 @@
         "post-install-cmd": "LTL\\Deploy\\A::a",
         "deploy-tag": "LTL\\Deploy\\DeployTag::execute"
     },
-    "config": {
-      
-       
-    }
+    "config": {}
 }
