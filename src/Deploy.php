@@ -10,7 +10,7 @@ class Deploy
     {
         $arguments = self::resolveArguments($event->getArguments());
 
-        $message = 'Generic message';
+        $message = 'Generic update';
         
         if (isset($arguments['m'])) {
             $message = $arguments['m'];
