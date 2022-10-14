@@ -40,7 +40,7 @@ class DeployTag
         $search = 'nothing to commit, working tree clean';
   
 
-        if (str_contains($untracking, $search)) {
+        if (self::str_contains($untracking, $search)) {
             print(PHP_EOL);
             print("\033[0;33m". str_repeat('-', 35) ."\033[0m".PHP_EOL);
             print("\033[0;33m Nothing to commit\033[0m".PHP_EOL);
@@ -110,7 +110,7 @@ class DeployTag
                 continue;
             }
 
-            if ($filter !== 'v' && !str_contains($file->getFilename(), $filter)) {
+            if ($filter !== 'v' && !self::str_contains($file->getFilename(), $filter)) {
                 continue;
             }
          
@@ -135,5 +135,14 @@ class DeployTag
         $list[] = ++$lastnumber;
 
         return implode('.', $list);
+    }
+
+    private static function str_contains(string $haystack, string $needle): bool
+    {
+        if (!function_exists('str_contains')) {
+            return empty($needle) || strpos($haystack, $needle) !== false;
+        }
+
+        return \str_contains($haystack, $needle);
     }
 }
