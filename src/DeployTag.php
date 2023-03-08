@@ -125,7 +125,7 @@ class DeployTag
     private static function addCountTag(string $last, string $filter)
     {
         if ($last === $filter) {
-            return "{$last}.0";
+            return "{$last}.000";
         }
 
         $list = explode('.', $last);
